@@ -13,7 +13,7 @@ app.use(express.urlencoded({
 
  ordres =[]
  users=[{name:'Feriel'},{name:'Asma'},{name:'Sana'}]
-products=[]
+
 
 app.use('/users',userRouter)
 app.use('/products',productRouter)
