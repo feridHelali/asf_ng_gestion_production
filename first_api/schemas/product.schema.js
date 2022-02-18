@@ -15,6 +15,6 @@ const ProductSchema = new Schema({
     stock:Number
 });
 
-module.export = mongoose.model('Product',ProductSchema);
+module.exports = mongoose.model('Product',ProductSchema);
 
 

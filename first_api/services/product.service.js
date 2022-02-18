@@ -1,32 +1,38 @@
 const mongoose = require('mongoose')
 const Product = require('../schemas/product.schema')
-const connectDb=require('../schemas/connect');
+const db=require('../schemas/connect');
 
-connectDb()
+
 
 const getProducts = async ()=>{
-    let result = await Product.find({}).exec()
-   return result
+    return await Product.find();
 }
 
 const getProductById= (id)=>{
+    //TODO: to Implement getProductById
     return 'getProductById'
 }
 
 
-const addProduct = (product)=>{
-    return 'addProduct'
+const addProduct =  async (label,color,stock)=>{
+    if(!label || !color ){
+        return 'label, color are required'
+    }else{
+        return await Product.create({label,color,stock })
+    }
+   
 }
 
 const updateProduct = (id,product)=>{
+    //TODO: to Implement updateProduct
     return 'updateProduct'
 }
 
 const deleteProduct = (id)=>{
+    //TODO: to Implement deleteProduct
     return 'deleteProduct'
 }
 
-getProducts()
 
 module.exports = {
     getProducts,
@@ -37,4 +43,3 @@ module.exports = {
 
 }
 
-//TODO: to implement getAllProducts
