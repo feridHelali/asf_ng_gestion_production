@@ -4,6 +4,9 @@ const userRouter = require('./controllers/users.routes');
 const productRouter = require('./controllers/product.routes');  
 const ordresRouter = require('./controllers/ordre.routes');
 const app=express();
+const db=require('./schemas/connect');
+
+db.connect()
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -11,9 +14,6 @@ app.use(express.urlencoded({
 }));
 
 
-
- ordres =[]
- users=[{name:'Feriel'},{name:'Asma'},{name:'Sana'}]
 
 
 app.use('/users',userRouter)

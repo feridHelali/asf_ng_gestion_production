@@ -12,7 +12,8 @@ const connect = async()=>{
       const uri =  mongod.getUri()
       mongoose.connect(uri,mongooseOptions);
     }else{
-      mongoose.connect(prcess.env.MONGODB_URI)
+      console.log(process.env.MONGODB_URI)
+      mongoose.connect(process.env.MONGODB_URI,mongooseOptions)
     }
 }
 
