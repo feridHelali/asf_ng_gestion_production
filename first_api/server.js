@@ -22,5 +22,8 @@ app.use('/ordres',ordresRouter)
 
 
 app.listen(8080,function(){
-  console.log('Server listening on http://loalhost:8080')
+  console.log('Server listening on http://localhost:8080')
 })
+
+
+module.exports = app
