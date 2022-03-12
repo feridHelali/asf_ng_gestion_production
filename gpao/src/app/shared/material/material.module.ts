@@ -6,6 +6,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 const material=[
   MatToolbarModule,
@@ -13,8 +15,9 @@ const material=[
   MatMenuModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatIconModule
-  
+  MatIconModule,
+  MatPaginatorModule,
+  MatTableModule
 ]
 
 

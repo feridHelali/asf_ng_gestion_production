@@ -10,6 +10,28 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ProductFormComponent } from './products/product-form/product-form.component'
 import { MaterialModule } from './shared/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HomComponent } from './hom/hom.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { LayoutModule } from '@angular/cdk/layout';
+import { ProductformComponent } from './productform/productform.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { ProductlistComponent } from './productlist/productlist.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { LandpageComponent } from './layouts/landpage/landpage.component';
+import { ContactComponent } from './layouts/contact/contact.component';
+import { AboutusComponent } from './layouts/aboutus/aboutus.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -17,7 +39,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomePageComponent,
     NavbarComponent,
     ProductListComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    HomComponent,
+    ProductformComponent,
+    ProductlistComponent,
+    LandpageComponent,
+    ContactComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +53,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
