@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomComponent } from './hom/hom.component';
 import { AboutusComponent } from './layouts/aboutus/aboutus.component';
 import { ContactComponent } from './layouts/contact/contact.component';
-import { ProductListComponent } from './products/product-list/product-list.component';
+import { HomePageComponent } from './layouts/home-page/home-page.component';
+import { ProductformComponent } from './product/productform/productform.component';
+import { ProductlistComponent } from './product/productlist/productlist.component';
+
 
 const routes: Routes = [
-  {path:'',component:HomComponent},
-  {path:'product',component:ProductListComponent},
+  {path:'',component:HomePageComponent},
+  {path:'product',component:ProductlistComponent},
+  {path:'addproduct',component:ProductformComponent},
   {path:'contact',component:ContactComponent},
   {path:'about',component:AboutusComponent},
   {path:'**',redirectTo:''},
