@@ -4,6 +4,7 @@ const db=require('../schemas/connect');
 
 
 
+
 const getProducts = async ()=>{
     return await Product.find();
 }
@@ -23,14 +24,14 @@ const addProduct =  async (label,color,stock)=>{
    
 }
 
-const updateProduct = (id,product)=>{
-    //TODO: to Implement updateProduct
-    return 'updateProduct'
+const updateProduct = async (id,product)=>{
+    const result = await Product.findByIdAndUpdate({_id:mongoose.Types.ObjectId(id),update:product})
+    return result;
 }
 
-const deleteProduct = (id)=>{
-    //TODO: to Implement deleteProduct
-    return 'deleteProduct'
+const deleteProduct = async (id)=>{
+    const result = await Product.findByIdAndDelete(mongoose.Types.ObjectId(id))
+    return result;
 }
 
 

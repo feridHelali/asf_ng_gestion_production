@@ -21,10 +21,23 @@ export class ProductlistComponent implements OnInit {
   addProduct(){
     this.router.navigate(['/addproduct']);
   }
+
+  removeProduct(id:string){
+   this.productService.deleteProduct(id)
+    .subscribe(data=>{
+      alert(JSON.stringify(data,undefined,2));
+      this.getAllProducts()
+    });
+  }
+
   ngOnInit(){
-      this.productService.getAllProducts().subscribe(data=>{
-        this.products=data.payload
-      })
+     this.getAllProducts()
+  }
+
+  getAllProducts(){
+    this.productService.getAllProducts().subscribe(data=>{
+      this.products=data.payload
+    })
   }
 
 

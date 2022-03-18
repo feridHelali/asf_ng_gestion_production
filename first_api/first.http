@@ -29,6 +29,20 @@ content-type: application/json
    
 }
 
+###
+PUT http://localhost:8080/products/620f9b68251e72a7d5f6655f HTTP/1.1
+content-type: application/json
+
+{
+    "label": "TV Sumsung",
+    "color":"Metalic",
+    "stock":3500
+   
+}
+
+###
+DELETE http://localhost:8080/products/622b2e2bcad692e53829300f HTTP/1.1
+
 
 
 ###

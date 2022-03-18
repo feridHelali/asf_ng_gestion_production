@@ -46,8 +46,47 @@ route.post('/', async (req, res) => {
 })
 
 
-// TODO: implement getProductById
-// TODO: implement update product
-// TODO: implement deleteProduct
+route.put('/:id', async (req, res) => {
+    let _product = req.body;
+    try {
+        let result = await productService.updateProduct(req.params.id,_product);
+        if(result){
+            return res.json({
+                status:'success',
+                message:'Product Updated succesfully',
+                payload : result
+            })
+        }
+    } catch (error) {
+        return res.json({
+            status:'error',
+            message:'The system fail update the product',
+            payload : error
+        })
+    }
+       
+})
+
+
+route.delete('/:id', async (req, res) => {
+  
+    try {
+        let result = await productService.deleteProduct(req.params.id);
+        if(result){
+            return res.json({
+                status:'success',
+                message:'Product Removed succesfully',
+                payload : result
+            })
+        }
+    } catch (error) {
+        return res.json({
+            status:'error',
+            message:'The system fail remove the product',
+            payload : error
+        })
+    }
+       
+})
 
 module.exports = route;
