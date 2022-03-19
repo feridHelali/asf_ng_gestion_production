@@ -1,35 +1,42 @@
 const mongoose = require('mongoose')
 const Product = require('../schemas/product.schema')
-const db=require('../schemas/connect');
+const db = require('../schemas/connect');
 
 
 
 
-const getProducts = async ()=>{
+const getProducts = async () => {
     return await Product.find();
 }
 
-const getProductById= (id)=>{
-    //TODO: to Implement getProductById
-    return 'getProductById'
+const getProductById = (id) => {
+    const product = Product.findById(id);
+    return product;
 }
 
 
-const addProduct =  async (label,color,stock)=>{
-    if(!label || !color ){
+const addProduct = async (label, color, stock) => {
+    if (!label || !color) {
         return 'label, color are required'
-    }else{
-        return await Product.create({label,color,stock })
+    } else {
+        return await Product.create({ label, color, stock })
     }
-   
+
 }
 
-const updateProduct = async (id,product)=>{
-    const result = await Product.findByIdAndUpdate({_id:mongoose.Types.ObjectId(id),update:product})
+const updateProduct = async (id, product) => {
+    console.log(product)
+    console.log(id)
+    const result = await Product.findOneAndUpdate({ _id: id},
+        {
+            label: product.label,
+            color: product.color,
+            stock: product.stock
+        })
     return result;
 }
 
-const deleteProduct = async (id)=>{
+const deleteProduct = async (id) => {
     const result = await Product.findByIdAndDelete(mongoose.Types.ObjectId(id))
     return result;
 }
@@ -37,8 +44,8 @@ const deleteProduct = async (id)=>{
 
 module.exports = {
     getProducts,
-    getProductById ,
-    addProduct ,
+    getProductById,
+    addProduct,
     updateProduct,
     deleteProduct
 

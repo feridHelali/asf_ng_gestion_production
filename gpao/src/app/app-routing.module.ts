@@ -5,6 +5,8 @@ import { ContactComponent } from './layouts/contact/contact.component';
 import { HomePageComponent } from './layouts/home-page/home-page.component';
 import { ProductformComponent } from './product/productform/productform.component';
 import { ProductlistComponent } from './product/productlist/productlist.component';
+import { ResolveProduct } from './product/resolve-product';
+import { UpdateProductComponent } from './product/update-product/update-product.component';
 
 
 const routes: Routes = [
@@ -13,7 +15,14 @@ const routes: Routes = [
   {path:'addproduct',component:ProductformComponent},
   {path:'contact',component:ContactComponent},
   {path:'about',component:AboutusComponent},
-  {path:'**',redirectTo:''},
+  {
+    path:'updateproduct/:id',
+    component:UpdateProductComponent,
+  resolve:{
+    product:ResolveProduct
+  }
+},
+  {path:'**',redirectTo:''}
 ];
 
 @NgModule({

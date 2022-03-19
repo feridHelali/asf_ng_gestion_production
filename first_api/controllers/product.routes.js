@@ -23,6 +23,25 @@ route.get('/',async (req, res) => {
         })
     }
 })
+route.get('/:id',async (req, res) => {
+    let id=req.params.id;
+    try {
+        let result = await productService.getProductById(id);
+        if(result){
+            return res.json({
+                status:'success',
+                message:'A Product',
+                payload : result
+            })
+        }
+    } catch (error) {
+        return res.json({
+            status:'error',
+            message:'The system fail to get the Product',
+            payload : error
+        })
+    }
+})
 
 route.post('/', async (req, res) => {
     let _product = req.body;
@@ -88,5 +107,7 @@ route.delete('/:id', async (req, res) => {
     }
        
 })
+
+
 
 module.exports = route;

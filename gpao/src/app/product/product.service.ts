@@ -19,6 +19,11 @@ export class ProductService {
   }
 
   updateProduct(id:string,newProduct:any):Observable<any>{
+    console.log('From ProductService',newProduct)
     return this.http.put(`${environment.API_URI}/products/${id}`,newProduct)
+  }
+
+  getProductById(id:any):Observable<any>{
+    return this.http.get(`${environment.API_URI}/products/${id}`);
   }
 }

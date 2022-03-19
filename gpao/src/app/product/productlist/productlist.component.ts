@@ -40,5 +40,9 @@ export class ProductlistComponent implements OnInit {
     })
   }
 
+  updateProduct(id:string){
+      console.log(id)
+      this.router.navigate([`/updateproduct/${id}`]);
+  }
 
 }

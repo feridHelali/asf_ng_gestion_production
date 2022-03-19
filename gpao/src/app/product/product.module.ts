@@ -6,12 +6,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../shared/material/material.module';
 import { MatTableModule } from '@angular/material/table';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 
 @NgModule({
   declarations: [
     ProductformComponent,
-    ProductlistComponent
+    ProductlistComponent,
+    UpdateProductComponent
   ],
   imports: [
     CommonModule,
